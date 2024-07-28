@@ -11,4 +11,13 @@
 	<setting name="multipleResultSetsEnabled" value="true"/>
 	<setting name="jdbcTypeForNull" value="NULL"/>
   </settings>
+  
+  <typeAliases>
+  	<package name="com.example.main.system.user.model" />
+  </typeAliases>
+  
+  <mappers>
+  	<mapper resource="mappers/mysql/main/user/userMapper.xml"/>
+  </mappers>
+  
 </configuration>
