@@ -10,6 +10,7 @@
 	<setting name="mapUnderscoreToCamelCase" value="true"/>
 	<setting name="multipleResultSetsEnabled" value="true"/>
 	<setting name="jdbcTypeForNull" value="NULL"/>
+    <setting name="logImpl" value="STDOUT_LOGGING" />
   </settings>
   
   <typeAliases>
