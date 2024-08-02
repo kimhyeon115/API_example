@@ -8,4 +8,7 @@ public interface LoginService {
 	
 	ResponseEntity<ResponseData> login(HashMap<String, Object> paramHashMap);
 
+	ResponseEntity<ResponseData> resetPassword(HashMap<String, Object> paramMap);
+	
+	ResponseEntity<ResponseData> logout(HashMap<String, Object> paramMap);
 }

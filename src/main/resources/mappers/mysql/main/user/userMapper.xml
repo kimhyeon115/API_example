@@ -82,6 +82,16 @@
 		</foreach> 
 	</update>
 	
+	<update id="resetPassword" parameterType="Map">
+		/** com.example.main.system.user.mapper.UserMapper.resetPassword **/
+		UPDATE ${main.db.schema}.user_mst
+		SET
+			user_pwd = #{newPwd}
+			, init_yn = 'N'
+			, last_pwd_chg_dt = NOW()
+		WHERE user_id = #{userId}
+	</update>
+	
     <update id="updateLastLoginDt" parameterType="Map">
 		/** com.example.main.system.user.mapper.UserMapper.updateLastLoginDt **/
 		UPDATE ${main.db.schema}.user_mst
@@ -90,5 +100,12 @@
 			, login_stat = 'Y'
 		WHERE user_id = #{userId}
 	</update>
-
+	
+	<update id="logout" parameterType="Map">
+		/** com.example.main.system.user.mapper.UserMapper.logout **/
+		UPDATE ${main.db.schema}.user_mst
+		SET
+			login_stat = 'N'
+		WHERE user_id = #{userId}
+	</update>
 </mapper>

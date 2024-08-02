@@ -20,7 +20,11 @@ public interface UserMapper {
 	
 	int deleteUser(HashMap<String, Object> paramHashMap);
 	
+	int resetPassword(HashMap<String, Object> paramHashMap);
+	
 	int updateLastLoginDt(HashMap<String, Object> paramHashMap);
+	
+	int logout(HashMap<String, Object> paramHashMap);
 	
 	int cntUserByAll(HashMap<String, Object> paramMap);
 	

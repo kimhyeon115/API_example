@@ -23,5 +23,14 @@ public class LoginController {
 	public ResponseEntity<ResponseData> login(@RequestBody HashMap<String, Object> paramMap) {
 		return loginService.login(paramMap);
 	}
-
+	
+	@PostMapping({"/resetPassword"})
+	public ResponseEntity<ResponseData> resetPassword(@RequestBody HashMap<String, Object> paramMap) {
+		return loginService.resetPassword(paramMap);
+	}
+	
+	@PostMapping({"/logout"})
+	public ResponseEntity<ResponseData> logout(@RequestBody HashMap<String, Object> paramMap) {
+		return loginService.logout(paramMap);
+	}
 }
