@@ -24,6 +24,8 @@ public interface UserMapper {
 	
 	int updateLastLoginDt(HashMap<String, Object> paramHashMap);
 	
+	int insertLoginHi(HashMap<String, Object> paramMap);
+	
 	int logout(HashMap<String, Object> paramHashMap);
 	
 	int cntUserByAll(HashMap<String, Object> paramMap);

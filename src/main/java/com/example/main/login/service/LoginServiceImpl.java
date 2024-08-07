@@ -34,10 +34,14 @@ public class LoginServiceImpl implements LoginService {
 				header = HeaderEntity.builder().code(Const.UNAUTHORIZED_CODE).message(Const.ACCOUNT_IS_NOT_EXIST).build();
 			} else if (!Bcrypt.matchesBcrypt((String)paramMap.get("userPwd"), user.getUserPwd())) {
 				header = HeaderEntity.builder().code(Const.UNAUTHORIZED_CODE).message(Const.PASSWORD_IS_NOT_MATCH).build();
+				paramMap.put("successYn", "N");
+				userMapper.insertLoginHi(paramMap);
 			} else {
 				header = HeaderEntity.builder().code(Const.SUCCESS_CODE).message(Const.SUCCESS).build();
 				result.put("user", userMapper.selectUser(paramMap));
 				userMapper.updateLastLoginDt(paramMap);
+				paramMap.put("successYn", "Y");
+				userMapper.insertLoginHi(paramMap);
 			}
 		} catch (Exception e) {
 			log.error(e.getMessage());

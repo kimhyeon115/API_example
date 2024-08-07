@@ -10,15 +10,17 @@
 	<setting name="mapUnderscoreToCamelCase" value="true"/>
 	<setting name="multipleResultSetsEnabled" value="true"/>
 	<setting name="jdbcTypeForNull" value="NULL"/>
-    <setting name="logImpl" value="STDOUT_LOGGING" />
+    <setting name="logImpl" value="STDOUT_LOGGING"/>
   </settings>
   
   <typeAliases>
-  	<package name="com.example.main.system.user.model" />
+  	<package name="com.example.main.system.user.model"/>
+  	<package name="com.example.main.system.menu.model"/>
   </typeAliases>
   
   <mappers>
   	<mapper resource="mappers/mysql/main/user/userMapper.xml"/>
+  	<mapper resource="mappers/mysql/main/menu/menuMapper.xml"/>
   </mappers>
   
 </configuration>

@@ -101,6 +101,21 @@
 		WHERE user_id = #{userId}
 	</update>
 	
+	<insert id="insertLoginHi" parameterType="Map">
+		/** com.example.main.system.user.mapper.UserMapper.insertLoginHi **/
+		INSERT INTO ${main.db.schema}.user_login_hi (
+			login_dt
+			, user_id
+			, success_yn
+		)
+		VALUES
+		(
+			NOW()
+			, #{userId}
+			, #{successYn}
+		)
+	</insert>
+	
 	<update id="logout" parameterType="Map">
 		/** com.example.main.system.user.mapper.UserMapper.logout **/
 		UPDATE ${main.db.schema}.user_mst
